@@ -10,8 +10,23 @@ neighbours = {
 def dijkstra(a,b):
     shortestPath = {}
     previousCity = {}
-    unexplored = {}
+    unexplored = []
 
     for city in neighbours:
         shortestPath[city] = float("inf")
         unexplored.append(city)
+
+    shortestPath[a] = 0
+    while unexplored:
+        minCity = unexplored[0]
+        
+        for  city in unexplored:
+            if shortestPath[city] < shortestPath[minCity]:
+                minCity = city
+        unexplored.remove(minCity)
+
+        for neighbour, distance in neighbours[minCity].items():
+         newDistance = shortestPath
+
+        
+
